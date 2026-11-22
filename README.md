@@ -4,6 +4,8 @@ Grafico interattivo a archi che mostra i collegamenti tra i capitoli della Bibbi
 
 Ogni arco unisce due capitoli che si richiamano a vicenda. Il colore indica la distanza tra i capitoli: blu per i più vicini, rosso per i più lontani.
 
+[![Esplora il grafico](https://img.shields.io/badge/Esplora_il_grafico-Demo_Live-d97706?style=for-the-badge&logo=vercel&logoColor=white&labelColor=292524)](https://bible-references.vercel.app/)
+
 ## Contenuto del progetto
 
 | File | A cosa serve |
