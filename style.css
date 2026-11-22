@@ -1,0 +1,177 @@
+:root {
+    --bg: #faf8f4;
+    --fg: #222;
+    --mut: #6b6b66;
+    --card: #fff;
+    --line: #d9d5cc;
+    --ot: #e2c48d;
+    --ot2: #d3b073;
+    --nt: #8fc3cf;
+    --nt2: #74aebc;
+    --bkfg: #1d1a14;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px)
+}
+
+@media (prefers-color-scheme:dark) {
+    :root:not([data-theme="light"]) {
+        --bg: #16171a;
+        --fg: #ece9e2;
+        --mut: #9a978f;
+        --card: #202226;
+        --line: #3a3c42;
+        --ot: #6e5530;
+        --ot2: #856438;
+        --nt: #2f6471;
+        --nt2: #3b7a89;
+        --bkfg: #f1ece2
+    }
+}
+
+:root[data-theme="dark"] {
+    --bg: #16171a;
+    --fg: #ece9e2;
+    --mut: #9a978f;
+    --card: #202226;
+    --line: #3a3c42;
+    --ot: #6e5530;
+    --ot2: #856438;
+    --nt: #2f6471;
+    --nt2: #3b7a89;
+    --bkfg: #f1ece2
+}
+
+html,
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px
+}
+
+h1 {
+    font: 600 22px/1.2 Georgia, serif;
+    margin: 4px 0
+}
+
+.sub {
+    color: var(--mut);
+    margin: 0 0 12px;
+    font-size: 14px
+}
+
+.bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 10px
+}
+
+.chip,
+.btn {
+    font: inherit;
+    font-size: 13px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--fg);
+    border-radius: 999px;
+    padding: 5px 12px;
+    cursor: pointer
+}
+
+.chip.on {
+    background: var(--fg);
+    color: var(--bg);
+    border-color: var(--fg)
+}
+
+.btn {
+    border-radius: 8px;
+    min-width: 34px
+}
+
+.sp {
+    flex: 1
+}
+
+#wrap {
+    position: relative;
+    height: min(68vh, 560px);
+    min-height: 400px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    touch-action: none;
+    cursor: grab
+}
+
+.tip {
+    position: absolute;
+    pointer-events: none;
+    background: var(--bg);
+    color: var(--fg);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 7px 10px;
+    font-size: 13px;
+    max-width: 270px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .18)
+}
+
+.tip[hidden] {
+    display: none
+}
+
+.note {
+    color: var(--mut);
+    font-size: 12.5px;
+    margin-top: 10px
+}
+
+main.fs {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    max-width: none;
+    margin: 0;
+    box-sizing: border-box;
+    padding: max(10px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right)) max(10px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left));
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden
+}
+
+main.fs>h1,
+main.fs>p {
+    display: none
+}
+
+main.fs>.bar {
+    flex: none
+}
+
+main.fs #wrap {
+    flex: 1;
+    height: auto;
+    min-height: 0
+}
+
+html:has(main.fs) {
+    overflow: hidden
+}

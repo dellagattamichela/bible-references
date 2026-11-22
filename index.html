@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Riferimenti incrociati della Bibbia</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <main>
+    <h1>Riferimenti incrociati della Bibbia, capitolo per capitolo</h1>
+    <p class="sub">Ogni arco unisce due capitoli che si richiamano a vicenda. Il colore indica la distanza tra i
+      capitoli: blu vicini, rosso lontani.</p>
+    <div class="bar" id="scope"></div>
+    <div class="bar">
+      <span class="sub" style="margin:0">Mostra solo i collegamenti con <b id="vv"></b></span>
+      <input type="range" id="rg" min="1" max="60" value="20" style="width:min(260px,40vw)">
+      <button class="btn" id="zin" title="Ingrandisci">+</button>
+      <button class="btn" id="zout" title="Riduci">−</button>
+      <button class="btn" id="zreset">Reimposta</button>
+      <button class="btn" id="fsb" title="Schermo intero">⛶ Schermo intero</button>
+      <span class="sp"></span>
+      <span class="sub" id="info" style="margin:0"></span>
+    </div>
+    <div id="wrap"><canvas id="cv"></canvas>
+      <div class="tip" id="tip" hidden></div>
+    </div>
+    <p class="note">Rotella (o +/−) per zoomare, trascina per spostarti. Passa su un arco per evidenziarlo; clicca per
+      mantenerlo evidenziato e clicca altrove per deselezionarlo. Puoi anche passare su un libro o un capitolo dell’asse
+      per vedere tutti i suoi collegamenti. I voti sono quelli che gli utenti di OpenBible.info hanno dato ai singoli
+      collegamenti tra versetti: indicano quanto un legame è considerato pertinente, non quanto riguarda Gesù. Dati:
+      OpenBible.info (CC BY 4.0), basati sul Treasury of Scripture Knowledge, aggregati per capitolo.</p>
+  </main>
+  <script src="./script.js"></script>
+</body>
+
+</html>
